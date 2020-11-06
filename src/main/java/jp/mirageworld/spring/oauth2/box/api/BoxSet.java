@@ -13,12 +13,16 @@ import lombok.*;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class BoxSet<E> implements Iterable<E> {
+
 	@JsonProperty
 	int limit;
+
 	@JsonProperty
 	int offset;
+
 	@JsonProperty
 	BoxOrder<OrderByUsers> order;
+
 	@JsonProperty("total_count")
 	int totalCount;
 

@@ -1,7 +1,6 @@
 package jp.mirageworld.spring.oauth2.box.api;
 
 import java.net.*;
-import java.time.*;
 import java.util.*;
 
 import com.fasterxml.jackson.annotation.*;
@@ -11,15 +10,12 @@ import jp.mirageworld.spring.oauth2.box.api.values.*;
 import lombok.*;
 
 @Data
+@EqualsAndHashCode(callSuper = true)
+@ToString(callSuper = true)
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
-public class BoxUser {
-	@JsonProperty
-	long id;
-	@JsonProperty
-	String type;
-	@JsonProperty
-	String name;
+public class BoxUser extends BoxEntity {
+
 	@JsonProperty
 	String address;
 	@JsonProperty
@@ -44,11 +40,5 @@ public class BoxUser {
 	long spaceUsed;
 	@JsonProperty
 	String timezone;
-	@JsonProperty("created_at")
-	OffsetDateTime createdAt;
-	@JsonProperty("modified_at")
-	OffsetDateTime modifiedAt;
 
-	@JsonAnySetter
-	Map<String, Object> anyField = new HashMap<>();
 }
