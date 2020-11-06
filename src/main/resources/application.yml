@@ -28,5 +28,5 @@ spring:
 logging:
   level:
     root: info
-    org.springframework.http.codec.json: info
+    org.springframework.http.codec.json: trace
    
